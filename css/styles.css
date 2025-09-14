@@ -327,26 +327,33 @@ img {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: #4D5AE5;
+     background-color: var(--color-primary);
     border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-social:hover,
-.link-social:focus {
-    background-color: #404bbf;
+.team-link-social:hover,
+.team-link-social:focus {
+  background-color: var(--color-accent);
 }
 
 .icon-social{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    fill: #F4F4FD;
+     fill: var(--color-light);
 }
 
 .team-social-item {
     width: 40px;
     height: 40px;
+}
+
+:root {
+  --color-primary: #4d5ae5;
+  --color-accent: #404bbf;
+  --color-light: #f4f4fd;
+  --color-dark: #2e2f42;
 }
 
 /*our portfolio*/
