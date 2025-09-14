@@ -85,6 +85,23 @@ img {
     letter-spacing: 0.02em;
     color: #2e2f42;
     padding: 24px 0;
+    position: relative;
+}
+
+.nav-link.active {
+    color: #404bbf;
+}
+
+.nav-link.active::after {
+       content: '';
+       position: absolute;
+       left: 0;
+       bottom: -1px;
+       width: 48px;
+       height: 4px;
+       background-color: #404bbf;
+       border-radius: 2px;
+       transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address {
@@ -118,6 +135,11 @@ img {
 /*main-section*/
 .section{
    background: #2e2f42;
+   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+   url("/goit-markup-hw-04/images/people-office.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
    text-align: center;
    padding: 188px 0;
 }
@@ -193,6 +215,26 @@ img {
 .benef-item {
     flex-basis: calc((100% - 3 * 24px) / 3);
 }
+
+.benef-box-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 264px;
+    height: 112px;
+    background-color: #F4F4FD;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+
+}
+
+.benef-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .benef-text {
     font-weight: 400;
     font-size: 16px;
@@ -232,7 +274,8 @@ img {
     flex-basis: calc((100% - 72px) / 4);
 }
 .team-cart {
-  padding: 32px 0 32px;
+  padding: 32px 0;
+  padding-bottom: 32px;
 }
 
 .team-names {
@@ -253,6 +296,36 @@ img {
     color: #434455;
     text-align: center;
 }
+
+.team-icon-social{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 16px 32px 16px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.link-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-social{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    fill: #F4F4FD;
+}
+
 
 /*our portfolio*/
 
@@ -283,6 +356,43 @@ img {
 
 .portfolio-item {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0%);
+}
+
+.portfolio-img-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px 32px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.portfolio-overlay-text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
 }
 
 .portfolio-carts {
@@ -317,6 +427,17 @@ img {
     padding: 100px 0;
 }
 
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    gap: 120px;
+}
+
+.footer-social{
+    display: flex;
+    flex-direction: column;
+}
+
 .footer-logo {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -342,4 +463,43 @@ img {
     letter-spacing: 0.02em;
     color: #f4f4fd;
     max-width: 264px;
+}
+
+.footer-social-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-social-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: #31d0aa;
+}
+
+.footer-social-icon {
+    fill: #f4f4fd;
 }
